@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Les régions marocaines représentées sur COOMES et leurs spécialités.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title data-i18n="page_regions">Les régions | COOMES</title>
+</head>
+<body>
+
+<div class="lang-bar" id="langBar">
+  <span data-i18n="lang_choose">Langue :</span>
+  <button onclick="setLang('fr')" class="active" id="btn-fr">Français</button>
+  <button onclick="setLang('ar')" id="btn-ar">العربية</button>
+  <button onclick="setLang('amz')" id="btn-amz">ⴰⵎⴰⵣⵉⵖ</button>
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img class="brand-mark" src="logo.png" alt="Logo COOMES">
+      <span class="brand-word">COOMES</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="a-propos.html" data-i18n="nav_apropos">À propos</a></li>
+      <li><a href="boutique.html" data-i18n="nav_boutique">Notre boutique</a></li>
+      <li><a href="regions.html" class="is-active" data-i18n="nav_regions">Les régions</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Nous contacter</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="creer-compte.html" class="btn btn-primary" data-i18n="nav_compte">Créer un compte</a>
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="a-propos.html" data-i18n="nav_apropos">À propos</a>
+    <a href="boutique.html" data-i18n="nav_boutique">Notre boutique</a>
+    <a href="regions.html" class="is-active" data-i18n="nav_regions">Les régions</a>
+    <a href="contact.html" data-i18n="nav_contact">Nous contacter</a>
+    <a href="creer-compte.html" class="btn btn-primary" data-i18n="nav_compte">Créer un compte</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="eyebrow_regions">Les régions</div>
+      <h1 data-i18n="hero_regions_title">Une carte tenue par les coopératives, pas par nous.</h1>
+      <p class="lead" data-i18n="hero_regions_lead">Chaque région du catalogue correspond à des coopératives réelles. Survolez une ligne pour voir sa spécialité.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="regions-grid">
+        <div class="map-card">
+          <svg viewBox="0 0 300 360" fill="none">
+            <path d="M70 20 L180 10 L230 55 L210 95 L260 150 L235 230 L210 250 L195 310 L150 350 L110 330 L90 280 L60 260 L40 200 L65 150 L40 100 Z"
+              fill="var(--sage-soft)" stroke="var(--sage)" stroke-width="2"/>
+            <circle cx="95" cy="120" r="6" fill="var(--clay)"/>
+            <circle cx="150" cy="200" r="6" fill="var(--clay)"/>
+            <circle cx="120" cy="240" r="6" fill="var(--clay)"/>
+            <circle cx="170" cy="90" r="6" fill="var(--clay)"/>
+            <circle cx="100" cy="290" r="6" fill="var(--clay)"/>
+            <circle cx="200" cy="160" r="6" fill="var(--clay)"/>
+          </svg>
+          <p class="map-caption" data-i18n="map_caption">Carte stylisée — repères illustratifs, non géographiquement précis.</p>
+        </div>
+        <div class="region-list">
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🌿</div>
+              <div>
+                <div class="region-name">Souss-Massa: Terre d’argan et de coopératives</div>
+                <div class="region-spec" data-i18n="reg_souss_spec">Argan, agrumes, élevage caprin</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🌸</div>
+              <div>
+                <div class="region-name">Drâa-Tafilalet: L’or des oasis</div>
+                <div class="region-spec" data-i18n="reg_draa_spec">Safran, dattes, plantes aromatiques</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🏺</div>
+              <div>
+                <div class="region-name">Marrakech-Safi: Artisanat et terroir d’exception</div>
+                <div class="region-spec" data-i18n="reg_marrakech_spec">Poterie, huile d'olive, tissage</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🫒</div>
+              <div>
+                <div class="region-name">Fès-Meknès: Cœur artisanal du Maroc</div>
+                <div class="region-spec" data-i18n="reg_fes_spec">Huile d'olive, miel, fromage de chèvre</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🧶</div>
+              <div>
+                <div class="region-name">Béni Mellal-Khénifra: Maroc vert et fertile</div>
+                <div class="region-spec" data-i18n="reg_beni_spec">Tapis, laine, miel de montagne</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🌾</div>
+              <div>
+                <div class="region-name">Oriental: Oasis et traditions vivantes</div>
+                <div class="region-spec" data-i18n="reg_oriental_spec">Céréales, couscous, figues séchées</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🐑</div>
+              <div>
+                <div class="region-name">Tanger-Tétouan-Al Hoceïma: Entre mer et montagne, l’authenticité du Nord</div>
+                <div class="region-spec" data-i18n="reg_tanger_spec">Fromages, thé à la menthe, artisanat du Rif</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="region-row">
+            <div class="region-row-inner">
+              <div class="region-logo">🐟</div>
+              <div>
+                <div class="region-name">Laâyoune-Sakia El Hamra: L’énergie des coopératives du désert</div>
+                <div class="region-spec" data-i18n="reg_laayoune_spec">Produits de la mer, artisanat sahraoui</div>
+              </div>
+            </div>
+            <svg class="region-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img class="brand-mark" src="logo.png" alt="Logo COOMES">
+          <span class="brand-word">COOMES</span>
+        </div>
+        <p class="footer-tag" data-i18n="footer_tag">La marchandisation des produits des coopératives marocaines — terroir, économie sociale et solidaire, emballages recyclés.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_nav">Navigation</h4>
+        <ul>
+          <li><a href="a-propos.html" data-i18n="nav_apropos">À propos</a></li>
+          <li><a href="boutique.html" data-i18n="nav_boutique">Notre boutique</a></li>
+          <li><a href="regions.html" data-i18n="nav_regions">Les régions</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_legal">Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html" data-i18n="footer_mentions">Mentions légales</a></li>
+          <li><a href="conditions-vente.html" data-i18n="footer_cgv">Conditions de vente</a></li>
+          <li><a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_coops">Coopératives</h4>
+        <ul>
+          <li><a href="creer-compte.html" data-i18n="footer_rejoindre">Rejoindre COOMES</a></li>
+          <li><a href="charte-qualite.html" data-i18n="footer_charte">Charte qualité</a></li>
+          <li><a href="espace-cooperative.html" data-i18n="footer_espace">Espace coopérative</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 COOMES — Plateforme marchande des coopératives marocaines.</span>
+      <span data-i18n="footer_made">Conçu avec le vert des oliviers et des terres de l'Atlas.</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

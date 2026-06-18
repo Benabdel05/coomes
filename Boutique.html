@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Le catalogue COOMES : huile d'argan, safran de Taliouine, miel de montagne, tapis, poterie et dattes, vendus en direct par les coopératives marocaines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title data-i18n="page_boutique">Notre boutique | COOMES</title>
+</head>
+<body>
+
+<div class="lang-bar" id="langBar">
+  <span data-i18n="lang_choose">Langue :</span>
+  <button onclick="setLang('fr')" class="active" id="btn-fr">Français</button>
+  <button onclick="setLang('ar')" id="btn-ar">العربية</button>
+  <button onclick="setLang('amz')" id="btn-amz">ⴰⵎⴰⵣⵉⵖ</button>
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img class="brand-mark" src="logo.png" alt="Logo COOMES">
+      <span class="brand-word">COOMES</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="a-propos.html" data-i18n="nav_apropos">À propos</a></li>
+      <li><a href="boutique.html" class="is-active" data-i18n="nav_boutique">Notre boutique</a></li>
+      <li><a href="regions.html" data-i18n="nav_regions">Les régions</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Nous contacter</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="creer-compte.html" class="btn btn-primary" data-i18n="nav_compte">Créer un compte</a>
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="a-propos.html" data-i18n="nav_apropos">À propos</a>
+    <a href="boutique.html" class="is-active" data-i18n="nav_boutique">Notre boutique</a>
+    <a href="regions.html" data-i18n="nav_regions">Les régions</a>
+    <a href="contact.html" data-i18n="nav_contact">Nous contacter</a>
+    <a href="creer-compte.html" class="btn btn-primary" data-i18n="nav_compte">Créer un compte</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="eyebrow_boutique">La boutique</div>
+      <h1 data-i18n="hero_boutique_title">Produits du terroir, directs des coopératives.</h1>
+      <p class="lead" data-i18n="hero_boutique_lead">Filtrez par catégorie ou région. Chaque produit affiche sa coopérative d'origine — la traçabilité fait partie de la fiche, pas une mention en petit.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+
+      <!-- Filtres -->
+      <div class="shop-filters" id="shopFilters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tout</button>
+        <button class="filter-btn" data-filter="alimentaire" data-i18n="filter_alimentaire">Alimentaire</button>
+        <button class="filter-btn" data-filter="artisanat" data-i18n="filter_artisanat">Artisanat</button>
+        <button class="filter-btn" data-filter="cosmetique" data-i18n="filter_cosmetique">Cosmétique</button>
+        <button class="filter-btn" data-filter="Souss-Massa">Souss-Massa</button>
+        <button class="filter-btn" data-filter="Drâa-Tafilalet">Drâa-Tafilalet</button>
+        <button class="filter-btn" data-filter="Marrakech-Safi">Marrakech-Safi</button>
+        <button class="filter-btn" data-filter="Béni Mellal-Khénifra">Béni Mellal-Khénifra</button>
+        <button class="filter-btn" data-filter="Fès-Meknès">Fès-Meknès</button>
+        <button class="filter-btn" data-filter="Oriental">Oriental</button>
+      </div>
+
+      <div class="shop-grid" id="shopGrid">
+
+        <!-- 1 Huile d'argan -->
+        <div class="product-card" data-cat="cosmetique" data-region="Souss-Massa">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&q=80" alt="Huile d'argan" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Souss-Massa</span>
+            <span class="product-name" data-i18n="prod_argan">Huile d'argan bio</span>
+            <span class="product-coop">Coop. Tighanimine</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Safran -->
+        <div class="product-card" data-cat="alimentaire" data-region="Drâa-Tafilalet">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&q=80" alt="Safran de Taliouine" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Drâa-Tafilalet</span>
+            <span class="product-name" data-i18n="prod_safran">Safran de Taliouine</span>
+            <span class="product-coop">Coop. Azaghar</span>
+            <div class="product-foot">
+              <span class="product-price">01 €  / g</span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Miel -->
+        <div class="product-card" data-cat="alimentaire" data-region="Béni Mellal-Khénifra">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=500&q=80" alt="Miel de thym" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Béni Mellal-Khénifra</span>
+            <span class="product-name" data-i18n="prod_miel">Miel de thym de montagne</span>
+            <span class="product-coop">Coop. Inzerki</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Tapis -->
+        <div class="product-card" data-cat="artisanat" data-region="Béni Mellal-Khénifra">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1600166898405-da9535204843?w=500&q=80" alt="Tapis Boucherouite" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Béni Mellal-Khénifra</span>
+            <span class="product-name" data-i18n="prod_tapis">Tapis Boucherouite (1 m²)</span>
+            <span class="product-coop">Coop. Tisram</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Poterie -->
+        <div class="product-card" data-cat="artisanat" data-region="Marrakech-Safi">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&q=80" alt="Poterie de Safi" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Marrakech-Safi</span>
+            <span class="product-name" data-i18n="prod_poterie">Poterie de Safi, set 4 bols</span>
+            <span class="product-coop">Coop. Al Khattabia</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Dattes -->
+        <div class="product-card" data-cat="alimentaire" data-region="Drâa-Tafilalet">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1593560707516-b9b1a609c5c7?w=500&q=80" alt="Dattes Mejhoul" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Drâa-Tafilalet</span>
+            <span class="product-name" data-i18n="prod_dattes">Dattes Mejhoul</span>
+            <span class="product-coop">Coop. Nakhla</span>
+            <div class="product-foot">
+              <span class="product-price">110 MAD / kg</span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 Huile d'olive -->
+        <div class="product-card" data-cat="alimentaire" data-region="Fès-Meknès">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&q=80" alt="Huile d'olive" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Fès-Meknès</span>
+            <span class="product-name" data-i18n="prod_olive">Huile d'olive extra vierge</span>
+            <span class="product-coop">Coop. Ain Zitoun</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 Couscous -->
+        <div class="product-card" data-cat="alimentaire" data-region="Oriental">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80" alt="Couscous artisanal" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Oriental</span>
+            <span class="product-name" data-i18n="prod_couscous">Couscous artisanal fin</span>
+            <span class="product-coop">Coop. Nour El Ain</span>
+            <div class="product-foot">
+              <span class="product-price">01 €  / kg</span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 Savon beldi -->
+        <div class="product-card" data-cat="cosmetique" data-region="Marrakech-Safi">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=500&q=80" alt="Savon beldi" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Marrakech-Safi</span>
+            <span class="product-name" data-i18n="prod_savon">Savon beldi à l'eucalyptus</span>
+            <span class="product-coop">Coop. Riad Vert</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 Ghassoul -->
+        <div class="product-card" data-cat="cosmetique" data-region="Fès-Meknès">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1628171081773-c60a4f1f0fe7?w=500&q=80" alt="Ghassoul" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Fès-Meknès</span>
+            <span class="product-name" data-i18n="prod_ghassoul">Ghassoul de la Moulouya</span>
+            <span class="product-coop">Coop. Tazrout</span>
+            <div class="product-foot">
+              <span class="product-price">01 €  / 200g</span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 Broderie -->
+        <div class="product-card" data-cat="artisanat" data-region="Fès-Meknès">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Broderie de Fès" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Fès-Meknès</span>
+            <span class="product-name" data-i18n="prod_broderie">Nappe brodée de Fès</span>
+            <span class="product-coop">Coop. Alwane</span>
+            <div class="product-foot">
+              <span class="product-price">01 € </span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 Figues séchées -->
+        <div class="product-card" data-cat="alimentaire" data-region="Oriental">
+          <div class="product-swatch" style="padding:0; overflow:hidden; height:180px;">
+            <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&q=80" alt="Figues séchées" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="product-body">
+            <span class="product-region">Oriental</span>
+            <span class="product-name" data-i18n="prod_figues">Figues séchées de Taourirt</span>
+            <span class="product-coop">Coop. Khnifiss</span>
+            <div class="product-foot">
+              <span class="product-price">01 €  / 500g</span>
+              <button class="add-btn" aria-label="Ajouter au panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p id="noResults" style="display:none; text-align:center; padding:40px 0; color:#5c6a52; font-style:italic;" data-i18n="no_results">Aucun produit ne correspond à ce filtre.</p>
+
+      <div class="shop-foot">
+        <a href="#" class="btn btn-primary" data-i18n="voir_catalogue">Voir tout le catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section club-section">
+    <div class="wrap club-grid">
+      <div class="club-text">
+        <div class="eyebrow eyebrow-light" data-i18n="eyebrow_avantages">Avantages membres</div>
+        <h2 data-i18n="club_title">Le Club COOMES</h2>
+        <p data-i18n="club_desc">Rejoignez le Club COOMES pour suivre de plus près les coopératives que vous soutenez : récoltes, nouveautés et petits avantages réservés aux membres.</p>
+        <ul class="club-benefits">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5 L11 15.5 L16 9"/></svg> <span data-i18n="club_b1">Accès en avant-première aux nouvelles récoltes (argan, safran, miel)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5 L11 15.5 L16 9"/></svg> <span data-i18n="club_b2">Réductions ponctuelles chez les coopératives partenaires</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5 L11 15.5 L16 9"/></svg> <span data-i18n="club_b3">Lettre du terroir : une coopérative mise à l'honneur chaque mois</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5 L11 15.5 L16 9"/></svg> <span data-i18n="club_b4">Suivi du retour des emballages réemployés</span></li>
+        </ul>
+      </div>
+      <div class="club-card">
+        <span class="pillar-tag" data-i18n="club_gratuit">Adhésion gratuite</span>
+        <h3 data-i18n="club_membre">Devenez membre</h3>
+        <p data-i18n="club_membre_desc">L'adhésion au Club COOMES est gratuite et s'active à la création de votre compte. Aucun engagement, aucune carte à renouveler.</p>
+        <a href="creer-compte.html" class="btn btn-clay" data-i18n="club_cta">Devenir membre du Club COOMES</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img class="brand-mark" src="logo.png" alt="Logo COOMES">
+          <span class="brand-word">COOMES</span>
+        </div>
+        <p class="footer-tag" data-i18n="footer_tag">La marchandisation des produits des coopératives marocaines — terroir, économie sociale et solidaire, emballages recyclés.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_nav">Navigation</h4>
+        <ul>
+          <li><a href="a-propos.html" data-i18n="nav_apropos">À propos</a></li>
+          <li><a href="boutique.html" data-i18n="nav_boutique">Notre boutique</a></li>
+          <li><a href="regions.html" data-i18n="nav_regions">Les régions</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_legal">Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html" data-i18n="footer_mentions">Mentions légales</a></li>
+          <li><a href="conditions-vente.html" data-i18n="footer_cgv">Conditions de vente</a></li>
+          <li><a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_coops">Coopératives</h4>
+        <ul>
+          <li><a href="creer-compte.html" data-i18n="footer_rejoindre">Rejoindre COOMES</a></li>
+          <li><a href="charte-qualite.html" data-i18n="footer_charte">Charte qualité</a></li>
+          <li><a href="espace-cooperative.html" data-i18n="footer_espace">Espace coopérative</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 COOMES — Plateforme marchande des coopératives marocaines.</span>
+      <span data-i18n="footer_made">Conçu avec le vert des oliviers et des terres de l'Atlas.</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

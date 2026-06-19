@@ -1,25 +1,150 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABIA ESS</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - ABIA ESS</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #1f6f5b;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .lang-switch {
+      text-align: center;
+      margin: 10px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #1f6f5b;
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      background: #ddd;
+    }
+  </style>
 </head>
+
 <body>
+
 <header>
-<h1 data-key="welcome">ABIA ESS — Devenir Consom'Acteur au Maroc</h1>
-<select id="languageSwitcher">
-<option value="fr">FR</option>
-<option value="ar">AR</option>
-<option value="amz">ⵜⵎⴰⵣⵉⵖⵜ</option>
-</select>
-<nav><a href="index.html">Accueil</a> <a href="apropos.html">À propos</a> <a href="boutiques.html">Boutiques</a> <a href="regions.html">Régions</a> <a href="charte-qualite.html">Charte Qualité</a> <a href="conditions-vente.html">Conditions de vente</a> <a href="contact.html">Contact</a> <a href="creer-compte.html">Créer compte</a> <a href="espace-cooperative.html">Espace coopérative</a> <a href="mentions-legales.html">Mentions légales</a> <a href="politique-confidentialite.html">Politique de confidentialité</a> </nav>
+  <h1 id="title">Contact ABIA ESS</h1>
 </header>
-<main>
-<h2>Contact</h2>
-<p data-key="content">Contenu de la page ABIA ESS.</p>
-</main>
-<script src="js/script.js"></script>
+
+<div class="lang-switch">
+  <button onclick="setLang('fr')">Français</button>
+  <button onclick="setLang('ar')">العربية</button>
+  <button onclick="setLang('zgh')">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
+</div>
+
+<div class="container">
+
+  <!-- FR -->
+  <div id="fr">
+    <h2>Nous contacter</h2>
+    <p>Envoyez-nous un message pour toute demande d'information.</p>
+
+    <form>
+      <input type="text" placeholder="Votre nom" required />
+      <input type="email" placeholder="Votre email" required />
+      <textarea placeholder="Votre message"></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+  <!-- AR -->
+  <div id="ar" class="hidden" dir="rtl">
+    <h2>اتصل بنا</h2>
+    <p>أرسل لنا رسالة لأي استفسار.</p>
+
+    <form>
+      <input type="text" placeholder="الاسم الكامل" required />
+      <input type="email" placeholder="البريد الإلكتروني" required />
+      <textarea placeholder="رسالتك"></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </div>
+
+  <!-- AMAZIGH -->
+  <div id="zgh" class="hidden">
+    <h2>ⴰⵎⴰⵡⴰⵍ ⵏ ⵓⵙⵎⴰⵙ</h2>
+    <p>ⴰⵣⵎⴰⵣ ⴰⵏⵖ ⵙ ⵉⵙⵎⴰⵡⴰⵍ ⵏ ⵓⵙⵙⵎⴰⵙ.</p>
+
+    <form>
+      <input type="text" placeholder="ⵉⵙⵎ ⵏⵏⴽ" required />
+      <input type="email" placeholder="ⵉⵎⴰⵢⵍ" required />
+      <textarea placeholder="ⴰⵙⵎⴰⵙ ⵏⵏⴽ"></textarea>
+      <button type="submit">ⴰⵣⵏ</button>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 ABIA ESS</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.getElementById("fr").classList.add("hidden");
+    document.getElementById("ar").classList.add("hidden");
+    document.getElementById("zgh").classList.add("hidden");
+
+    document.getElementById(lang).classList.remove("hidden");
+
+    if (lang === "ar") {
+      document.body.dir = "rtl";
+    } else {
+      document.body.dir = "ltr";
+    }
+  }
+</script>
+
 </body>
 </html>

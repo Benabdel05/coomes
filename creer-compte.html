@@ -1,25 +1,119 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABIA ESS</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion / Inscription - ABIA ESS</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 380px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1f6f5b;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #1f6f5b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #155447;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      color: #1f6f5b;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .title {
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-<h1 data-key="welcome">ABIA ESS — Devenir Consom'Acteur au Maroc</h1>
-<select id="languageSwitcher">
-<option value="fr">FR</option>
-<option value="ar">AR</option>
-<option value="amz">ⵜⵎⴰⵣⵉⵖⵜ</option>
-</select>
-<nav><a href="index.html">Accueil</a> <a href="apropos.html">À propos</a> <a href="boutiques.html">Boutiques</a> <a href="regions.html">Régions</a> <a href="charte-qualite.html">Charte Qualité</a> <a href="conditions-vente.html">Conditions de vente</a> <a href="contact.html">Contact</a> <a href="creer-compte.html">Créer compte</a> <a href="espace-cooperative.html">Espace coopérative</a> <a href="mentions-legales.html">Mentions légales</a> <a href="politique-confidentialite.html">Politique de confidentialité</a> </nav>
-</header>
-<main>
-<h2>Créer compte</h2>
-<p data-key="content">Contenu de la page ABIA ESS.</p>
-</main>
-<script src="js/script.js"></script>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="loginBox">
+    <h2>Se connecter</h2>
+
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Mot de passe">
+
+    <button>Connexion</button>
+
+    <div class="switch" onclick="toggleForm()">
+      Pas de compte ? Créer un compte
+    </div>
+  </div>
+
+  <!-- REGISTER -->
+  <div id="registerBox" class="hidden">
+    <h2>Créer un compte</h2>
+
+    <input type="text" placeholder="Nom complet">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Mot de passe">
+    <input type="password" placeholder="Confirmer mot de passe">
+
+    <button>Inscription</button>
+
+    <div class="switch" onclick="toggleForm()">
+      Déjà un compte ? Se connecter
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleForm() {
+    const login = document.getElementById("loginBox");
+    const register = document.getElementById("registerBox");
+
+    login.classList.toggle("hidden");
+    register.classList.toggle("hidden");
+  }
+</script>
+
 </body>
 </html>

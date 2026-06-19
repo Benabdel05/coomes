@@ -1,0 +1,7 @@
+
+:root{--primary:#0FA958;--secondary:#7FD957;--bg:#F7F4ED;--text:#16291E;}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+header{background:var(--primary);color:white;padding:15px}
+nav a{color:white;text-decoration:none;margin:0 8px}
+main{padding:20px}
+select{padding:5px}

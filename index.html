@@ -3,24 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABIA - Accueil</title>
+<title>COOMES — Les coopératives marocaines, sans détour</title>
+<meta name="description" content="COOMES relie les coopératives marocaines aux foyers qui achètent juste : produits du terroir, économie sociale et solidaire, emballages recyclés.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#f4f4f4;
-}
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
 
-/* HEADER */
-header{
-  background:#1f6f5b;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
+<header class="entete">
+  <div class="entete-haut">
+    <span class="visually-hidden">Choisir la langue</span>
+    <button class="langue-bouton" data-lang="fr" aria-current="true">Français</button>
+    <button class="langue-bouton" data-lang="ar">العربية</button>
+    <button class="langue-bouton" data-lang="zgh">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
+  </div>
+  <nav class="entete-nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="" width="38" height="38">
+      COOMES
+    </a>
+    <ul class="nav-liens">
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="boutique.html">Notre boutique</a></li>
+      <li><a href="regions.html">Les régions</a></li>
+      <li><a href="contact.html">Nous contacter</a></li>
+    </ul>
+    <a href="creer-compte.html" class="bouton bouton--principal">Créer un compte</a>
+    <button class="menu-mobile-bouton" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-/* HERO */
-.hero{
-  padding:60px 20px;
-  text-align:center;
+<main id="contenu-principal">
+
+  <section class="heros">
+    <div class="heros-contenu">
+      <div>
+        <span class="heros-eyebrow">Plateforme marchande de l'économie sociale et solidaire</span>
+        <h1>Le Maroc des terroirs, sans détour.</h1>
+        <p class="heros-intro">COOMES relie directement les coopératives marocaines aux foyers qui veulent acheter juste : produits du terroir, circuits courts et emballages recyclés, sans intermédiaire qui rogne la marge des producteurs.</p>
+        <div class="heros-actions">
+          <a href="boutique.html" class="bouton bouton--principal">Découvrir la boutique</a>
+          <a href="a-propos.html" class="bouton bouton--secondaire">Notre démarche</a>
+        </div>
+      </div>
+      <div class="heros-visuel" aria-hidden="true">
+        <img src="logo.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="bandeau-chiffres">
+        <div>
+          <div class="chiffre-nombre">120+</div>
+          <div class="chiffre-label">Coopératives partenaires</div>
+        </div>
+        <div>
+          <div class="chiffre-nombre">10</div>
+          <div class="chiffre-label">Régions représentées</div>
+        </div>
+        <div>
+          <div class="chiffre-nombre">0%</div>
+          <div class="chiffre-label">Intermédiaire sur le prix producteur</div>
+        </div>
+        <div>
+          <div class="chiffre-nombre">100%</div>
+          <div class="chiffre-label">Emballages recyclés ou réutilisables</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alterne">
+    <div class="container">
+      <div class="section-entete">
+        <span class="eyebrow">Notre engagement</span>
+        <h2>Trois principes, sans compromis</h2>
+        <p>Chaque coopérative référencée sur COOMES respecte une charte qualité claire, vérifiée avant toute mise en ligne.</p>
+      </div>
+      <div class="grille-3">
+        <article class="carte">
+          <div class="carte-icone" aria-hidden="true">🌿</div>
+          <h3>Produits du terroir</h3>
+          <p>Huile d'argan, dattes, miel, safran, tissages : des produits ancrés dans leur région, à leur juste prix.</p>
+        </article>
+        <article class="carte">
+          <div class="carte-icone" aria-hidden="true">🤝</div>
+          <h3>Économie sociale et solidaire</h3>
+          <p>Les coopératives gardent la maîtrise de leur prix et de leur récit. COOMES ne prélève qu'une commission transparente.</p>
+        </article>
+        <article class="carte">
+          <div class="carte-icone" aria-hidden="true">♻️</div>
+          <h3>Emballages recyclés</h3>
+          <p>Cartons recyclés, calage en papier kraft, zéro plastique à usage unique sur l'ensemble des expéditions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-entete">
+        <span class="eyebrow">Sélection</span>
+        <h2>Quelques produits du moment</h2>
+        <p>Un aperçu de la boutique — récolte, fabrication et conditionnement par les coopératives elles-mêmes.</p>
+      </div>
+      <div class="grille-4">
+        <article class="carte-produit">
+          <div class="carte-produit-image" aria-hidden="true">🫒
+            <span class="carte-produit-badge">Bio</span>
+          </div>
+          <div class="carte-produit-corps">
+            <span class="carte-produit-cooperative">Coopérative Tifaoute</span>
+            <h3>Huile d'olive extra vierge</h3>
+            <p class="carte-produit-region">Région de Fès-Meknès — 500 ml</p>
+            <div class="carte-produit-bas">
+              <span class="carte-produit-prix">95 MAD</span>
+              <button class="bouton-panier" aria-label="Ajouter au panier">+</button>
+            </div>
+          </div>
+        </article>
+        <article class="carte-produit">
+          <div class="carte-produit-image" aria-hidden="true">🌰</div>
+          <div class="carte-produit-corps">
+            <span class="carte-produit-cooperative">Coopérative Tighanimine</span>
+            <h3>Huile d'argan cosmétique</h3>
+            <p class="carte-produit-region">Région du Souss-Massa — 100 ml</p>
+            <div class="carte-produit-bas">
+              <span class="carte-produit-prix">120 MAD</span>
+              <button class="bouton-panier" aria-label="Ajouter au panier">+</button>
+            </div>
+          </div>
+        </article>
+        <article class="carte-produit">
+          <div class="carte-produit-image" aria-hidden="true">🧶
+            <span class="carte-produit-badge">Fait main</span>
+          </div>
+          <div class="carte-produit-corps">
+            <span class="carte-produit-cooperative">Coopérative Tazenakht</span>
+            <h3>Tapis berbère traditionnel</h3>
+            <p class="carte-produit-region">Région de Marrakech-Safi — 150x90 cm</p>
+            <div class="carte-produit-bas">
+              <span class="carte-produit-prix">1 450 MAD</span>
+              <button class="bouton-panier" aria-label="Ajouter au panier">+</button>
+            </div>
+          </div>
+        </article>
+        <article class="carte-produit">
+          <div class="carte-produit-image" aria-hidden="true">🍯</div>
+          <div class="carte-produit-corps">
+            <span class="carte-produit-cooperative">Coopérative Anfgou</span>
+            <h3>Miel de montagne toutes fleurs</h3>
+            <p class="carte-produit-region">Région de Fès-Meknès — 350 g</p>
+            <div class="carte-produit-bas">
+              <span class="carte-produit-prix">85 MAD</span>
+              <button class="bouton-panier" aria-label="Ajouter au panier">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="texte-centre marge-haut-l">
+        <a href="boutique.html" class="bouton bouton--secondaire">Voir tous les produits</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alterne">
+    <div class="container">
+      <blockquote class="citation">
+        <p>« Avant COOMES, on vendait notre huile d'argan à un prix fixé par des revendeurs qui ne mettaient jamais les pieds dans la coopérative. Aujourd'hui, on fixe nous-mêmes nos prix et on connaît nos clients. »</p>
+        <footer class="citation-auteur">
+          <span class="citation-auteur-pastille" aria-hidden="true">F</span>
+          <span>
+            <span class="citation-auteur-nom" style="display:block;">Fatima Ait Ali</span>
+            <span class="citation-auteur-role">Présidente, Coopérative Tighanimine</span>
+          </span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-entete">
+        <span class="eyebrow">Le Maroc en dix régions</span>
+        <h2>Un terroir, une coopérative, une histoire</h2>
+        <p>Explorez les coopératives partenaires région par région et découvrez ce qui s'y fabrique.</p>
+      </div>
+      <div class="grille-3">
+        <article class="carte-region">
+          <span class="carte-region-nombre">Souss-Massa</span>
+          <h3>Huile d'argan</h3>
+          <p>Coopératives agricoles féminines, savoir-faire reconnu à l'UNESCO.</p>
+          <a href="regions.html" class="carte-region-lien">Voir la région →</a>
+        </article>
+        <article class="carte-region">
+          <span class="carte-region-nombre">Marrakech-Safi</span>
+          <h3>Artisanat & tissage</h3>
+          <p>Tapis, poterie et produits locaux issus de l'artisanat traditionnel.</p>
+          <a href="regions.html" class="carte-region-lien">Voir la région →</a>
+        </article>
+        <article class="carte-region">
+          <span class="carte-region-nombre">Drâa-Tafilalet</span>
+          <h3>Dattes & oasis</h3>
+          <p>Produits du désert issus de coopératives oasiennes engagées.</p>
+          <a href="regions.html" class="carte-region-lien">Voir la région →</a>
+        </article>
+      </div>
+      <p class="texte-centre marge-haut-l">
+        <a href="regions.html" class="bouton bouton--secondaire">Voir les 10 régions</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alterne">
+    <div class="container texte-centre">
+      <h2>Vous représentez une coopérative ?</h2>
+      <p style="max-width: 56ch; margin: 0 auto 28px;">Rejoignez COOMES et vendez directement vos produits à des foyers qui partagent vos valeurs, partout au Maroc.</p>
+      <a href="creer-compte.html" class="bouton bouton--principal">Rejoindre COOMES</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="container">
+    <div class="pied-grille">
+      <div>
+        <span class="pied-logo">COOMES</span>
+        <p class="pied-baseline">La marchandisation des produits des coopératives marocaines — terroir, économie sociale et solidaire, emballages recyclés.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="boutique.html">Notre boutique</a></li>
+          <li><a href="regions.html">Les régions</a></li>
+          <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="conditions-vente.html">Conditions de vente</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Coopératives</h4>
+        <ul>
+          <li><a href="creer-compte.html">Rejoindre COOMES</a></li>
+          <li><a href="charte-qualite.html">Charte qualité</a></li>
+          <li><a href="espace-cooperative.html">Espace coopérative</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <span>© 2026 COOMES — Plateforme marchande des coopératives marocaines.</span>
+      <span>Conçu avec le vert des oliviers et des terres de l'Atlas.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+        </html>

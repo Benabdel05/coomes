@@ -1,7 +1,177 @@
+/* =========================
+   ABIA ESS - ECO GREEN THEME
+   ========================= */
 
-:root{--primary:#0FA958;--secondary:#7FD957;--bg:#F7F4ED;--text:#16291E;}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
-header{background:var(--primary);color:white;padding:15px}
-nav a{color:white;text-decoration:none;margin:0 8px}
-main{padding:20px}
-select{padding:5px}
+:root{
+  --primary: #1f6f5b;      /* vert principal ESS */
+  --secondary: #2ecc71;    /* vert vif écologique */
+  --light: #f4f9f6;        /* fond doux */
+  --dark: #0f2e25;         /* texte foncé */
+  --gray: #e0e0e0;
+  --white: #ffffff;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background: var(--light);
+  color: var(--dark);
+  line-height:1.6;
+}
+
+/* HEADER */
+header{
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding:20px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1, header h2{
+  letter-spacing:1px;
+}
+
+/* NAVIGATION */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background: var(--white);
+  padding:10px;
+  border-bottom:2px solid var(--gray);
+}
+
+nav button{
+  margin:5px;
+  padding:10px 15px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  background: var(--primary);
+  color:white;
+  transition:0.3s;
+}
+
+nav button:hover{
+  background: var(--secondary);
+  transform: scale(1.05);
+}
+
+/* HERO / HOME */
+.hero{
+  padding:60px 20px;
+  text-align:center;
+  background: url("eco-bg.jpg") center/cover;
+  color:white;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  margin-top:10px;
+  font-size:18px;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  margin-top:15px;
+  background: var(--secondary);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background: var(--primary);
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  border-left:5px solid var(--primary);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  border-left:5px solid var(--secondary);
+}
+
+/* FORMS */
+input, textarea, select{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid var(--gray);
+  border-radius:8px;
+  outline:none;
+}
+
+input:focus, textarea:focus{
+  border-color: var(--secondary);
+}
+
+/* BUTTON */
+button{
+  background: var(--primary);
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background: var(--secondary);
+}
+
+/* SPLASH SCREEN */
+#splash{
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background: var(--primary);
+  color:white;
+  margin-top:20px;
+}
+
+/* UTILITIES */
+.hidden{
+  display:none;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}

@@ -3,23 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABIA ESS</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Régions - ABIA ESS</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
+}
+
+header{
+  background:#1f6f5b;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+}
+
+.card h3{
+  color:#1f6f5b;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:20px;
+  background:#ddd;
+}
+</style>
 </head>
+
 <body>
+
 <header>
-<h1 data-key="welcome">ABIA ESS — Devenir Consom'Acteur au Maroc</h1>
-<select id="languageSwitcher">
-<option value="fr">FR</option>
-<option value="ar">AR</option>
-<option value="amz">ⵜⵎⴰⵣⵉⵖⵜ</option>
-</select>
-<nav><a href="index.html">Accueil</a> <a href="apropos.html">À propos</a> <a href="boutiques.html">Boutiques</a> <a href="regions.html">Régions</a> <a href="charte-qualite.html">Charte Qualité</a> <a href="conditions-vente.html">Conditions de vente</a> <a href="contact.html">Contact</a> <a href="creer-compte.html">Créer compte</a> <a href="espace-cooperative.html">Espace coopérative</a> <a href="mentions-legales.html">Mentions légales</a> <a href="politique-confidentialite.html">Politique de confidentialité</a> </nav>
+  <h1>Régions du Maroc - ABIA ESS</h1>
+  <p>Choisissez une région pour découvrir les coopératives</p>
 </header>
-<main>
-<h2>Régions</h2>
-<p data-key="content">Contenu de la page ABIA ESS.</p>
-</main>
-<script src="js/script.js"></script>
+
+<div class="container">
+
+  <div class="grid">
+
+    <div class="card" onclick="openRegion('Tanger-Tétouan-Al Hoceïma')">
+      <h3>Tanger-Tétouan-Al Hoceïma</h3>
+      <p>Coopératives agricoles, artisanales et maritimes</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Rabat-Salé-Kénitra')">
+      <h3>Rabat-Salé-Kénitra</h3>
+      <p>Produits agricoles et coopératives urbaines</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Casablanca-Settat')">
+      <h3>Casablanca-Settat</h3>
+      <p>Industrie, transformation et commerce ESS</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Marrakech-Safi')">
+      <h3>Marrakech-Safi</h3>
+      <p>Artisanat, huile d’argan, produits locaux</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Fès-Meknès')">
+      <h3>Fès-Meknès</h3>
+      <p>Artisanat traditionnel et agriculture</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Souss-Massa')">
+      <h3>Souss-Massa</h3>
+      <p>Coopératives agricoles et huile d’argan</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Oriental')">
+      <h3>Région de l’Oriental</h3>
+      <p>Produits agricoles et artisanat local</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Drâa-Tafilalet')">
+      <h3>Drâa-Tafilalet</h3>
+      <p>Dattes, oasis et produits du désert</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Laâyoune-Sakia El Hamra')">
+      <h3>Laâyoune-Sakia El Hamra</h3>
+      <p>Pêche et produits sahariens</p>
+    </div>
+
+    <div class="card" onclick="openRegion('Dakhla-Oued Ed-Dahab')">
+      <h3>Dakhla-Oued Ed-Dahab</h3>
+      <p>Pêche et économie maritime</p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ABIA ESS - Régions du Maroc
+</footer>
+
+<script>
+function openRegion(region){
+  alert("Vous avez sélectionné : " + region + "\n(Connexion vers les coopératives à ajouter)");
+}
+</script>
+
 </body>
 </html>

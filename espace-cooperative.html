@@ -3,23 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABIA ESS</title>
-<link rel="stylesheet" href="css/style.css">
+<title>ABIA ESS - Espace Coopérative</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
+}
+
+header{
+  background:#1f6f5b;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.box{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,textarea,select{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#1f6f5b;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+button:hover{background:#155447;}
+
+.hidden{display:none;}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.tab{
+  flex:1;
+  padding:10px;
+  background:#ddd;
+  text-align:center;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+.active{
+  background:#1f6f5b;
+  color:white;
+}
+
+.card{
+  border:1px solid #ddd;
+  padding:10px;
+  margin:8px 0;
+  border-radius:5px;
+}
+</style>
 </head>
+
 <body>
+
 <header>
-<h1 data-key="welcome">ABIA ESS — Devenir Consom'Acteur au Maroc</h1>
-<select id="languageSwitcher">
-<option value="fr">FR</option>
-<option value="ar">AR</option>
-<option value="amz">ⵜⵎⴰⵣⵉⵖⵜ</option>
-</select>
-<nav><a href="index.html">Accueil</a> <a href="apropos.html">À propos</a> <a href="boutiques.html">Boutiques</a> <a href="regions.html">Régions</a> <a href="charte-qualite.html">Charte Qualité</a> <a href="conditions-vente.html">Conditions de vente</a> <a href="contact.html">Contact</a> <a href="creer-compte.html">Créer compte</a> <a href="espace-cooperative.html">Espace coopérative</a> <a href="mentions-legales.html">Mentions légales</a> <a href="politique-confidentialite.html">Politique de confidentialité</a> </nav>
+<h2>ABIA ESS - Espace Coopérative</h2>
 </header>
-<main>
-<h2>Espace coopérative</h2>
-<p data-key="content">Contenu de la page ABIA ESS.</p>
-</main>
-<script src="js/script.js"></script>
+
+<div class="container">
+
+<!-- AUTH -->
+<div id="authBox" class="box">
+
+  <!-- LOGIN -->
+  <div id="loginBox">
+    <h3>Connexion</h3>
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPass" type="password" placeholder="Mot de passe">
+    <button onclick="login()">Se connecter</button>
+
+    <p onclick="toggle()" style="cursor:pointer;color:#1f6f5b;">
+      Créer un compte coopérative
+    </p>
+  </div>
+
+  <!-- REGISTER -->
+  <div id="registerBox" class="hidden">
+    <h3>Créer compte coopérative</h3>
+    <input id="coopName" placeholder="Nom coopérative">
+    <input id="regEmail" placeholder="Email">
+    <input id="regPass" type="password" placeholder="Mot de passe">
+    <button onclick="register()">Créer compte</button>
+
+    <p onclick="toggle()" style="cursor:pointer;color:#1f6f5b;">
+      J’ai déjà un compte
+    </p>
+  </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+  <button onclick="logout()">Déconnexion</button>
+
+  <h3 id="welcome"></h3>
+
+  <div class="tabs">
+    <div class="tab active" onclick="show('orders')">Commandes</div>
+    <div class="tab" onclick="show('messages')">Messages</div>
+    <div class="tab" onclick="show('notif')">Notifications</div>
+  </div>
+
+  <!-- COMMANDES -->
+  <div id="orders" class="box">
+    <h3>📦 Commandes</h3>
+    <input id="orderProduct" placeholder="Nom produit">
+    <select id="orderStatus">
+      <option>en attente</option>
+      <option>en cours</option>
+      <option>terminée</option>
+    </select>
+    <button onclick="addOrder()">Ajouter commande</button>
+
+    <div id="orderList"></div>
+  </div>
+
+  <!-- MESSAGES -->
+  <div id="messages" class="box hidden">
+    <h3>💬 Messages clients</h3>
+
+    <textarea id="msgText" placeholder="Message au client"></textarea>
+    <button onclick="sendMessage()">Envoyer</button>
+
+    <div id="msgList"></div>
+  </div>
+
+  <!-- NOTIFICATIONS -->
+  <div id="notif" class="box hidden">
+    <h3>🔔 Notifications</h3>
+
+    <textarea id="notifText" placeholder="Notification"></textarea>
+    <button onclick="sendNotif()">Envoyer</button>
+
+    <div id="notifList"></div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+let currentUser = null;
+
+/* ---------------- AUTH ---------------- */
+
+function toggle(){
+  document.getElementById("loginBox").classList.toggle("hidden");
+  document.getElementById("registerBox").classList.toggle("hidden");
+}
+
+function register(){
+  let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+  users.push({
+    name: document.getElementById("coopName").value,
+    email: document.getElementById("regEmail").value,
+    pass: document.getElementById("regPass").value
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Compte créé !");
+  toggle();
+}
+
+function login(){
+  let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+  let email = document.getElementById("loginEmail").value;
+  let pass = document.getElementById("loginPass").value;
+
+  let user = users.find(u => u.email === email && u.pass === pass);
+
+  if(!user){
+    alert("Erreur connexion");
+    return;
+  }
+
+  currentUser = user;
+
+  document.getElementById("authBox").classList.add("hidden");
+  document.getElementById("dashboard").classList.remove("hidden");
+
+  document.getElementById("welcome").innerText =
+    "Bienvenue " + user.name;
+
+  loadAll();
+}
+
+function logout(){
+  location.reload();
+}
+
+/* ---------------- DASHBOARD ---------------- */
+
+function show(tab){
+  ["orders","messages","notif"].forEach(t=>{
+    document.getElementById(t).classList.add("hidden");
+  });
+
+  document.getElementById(tab).classList.remove("hidden");
+}
+
+/* ---------------- ORDERS ---------------- */
+
+function addOrder(){
+  let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+
+  orders.push({
+    user: currentUser.email,
+    product: document.getElementById("orderProduct").value,
+    status: document.getElementById("orderStatus").value
+  });
+
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  loadOrders();
+}
+
+function loadOrders(){
+  let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+
+  let list = document.getElementById("orderList");
+  list.innerHTML = "";
+
+  orders.filter(o=>o.user===currentUser.email).forEach(o=>{
+    list.innerHTML += `<div class="card">
+      ${o.product} - <b>${o.status}</b>
+    </div>`;
+  });
+}
+
+/* ---------------- MESSAGES ---------------- */
+
+function sendMessage(){
+  let msgs = JSON.parse(localStorage.getItem("msgs") || "[]");
+
+  msgs.push({
+    user: currentUser.email,
+    text: document.getElementById("msgText").value
+  });
+
+  localStorage.setItem("msgs", JSON.stringify(msgs));
+
+  loadMessages();
+}
+
+function loadMessages(){
+  let msgs = JSON.parse(localStorage.getItem("msgs") || "[]");
+
+  let list = document.getElementById("msgList");
+  list.innerHTML = "";
+
+  msgs.filter(m=>m.user===currentUser.email).forEach(m=>{
+    list.innerHTML += `<div class="card">${m.text}</div>`;
+  });
+}
+
+/* ---------------- NOTIFICATIONS ---------------- */
+
+function sendNotif(){
+  let n = JSON.parse(localStorage.getItem("notif") || "[]");
+
+  n.push({
+    user: currentUser.email,
+    text: document.getElementById("notifText").value
+  });
+
+  localStorage.setItem("notif", JSON.stringify(n));
+
+  loadNotif();
+}
+
+function loadNotif(){
+  let n = JSON.parse(localStorage.getItem("notif") || "[]");
+
+  let list = document.getElementById("notifList");
+  list.innerHTML = "";
+
+  n.filter(x=>x.user===currentUser.email).forEach(x=>{
+    list.innerHTML += `<div class="card">${x.text}</div>`;
+  });
+}
+
+/* ---------------- LOAD ALL ---------------- */
+
+function loadAll(){
+  loadOrders();
+  loadMessages();
+  loadNotif();
+}
+
+</script>
+
 </body>
 </html>
